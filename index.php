@@ -29,4 +29,5 @@ echo "<hr>";
 
 echo "<p>© 2025 Program Studi Sistem Informasi</p>";
 echo "<p>update terakhir: ". date (02-01-2026) . "<p>;
+echo "<p>status: pendaftaran aktif</p>";
 ?>
