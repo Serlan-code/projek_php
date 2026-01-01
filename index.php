@@ -28,4 +28,5 @@ echo "<a href='tambah.php'>DAFTAR SEKARANG</a>";
 echo "<hr>";
 
 echo "<p>© 2025 Program Studi Sistem Informasi</p>";
+echo "<p>update terakhir: ". date (02-01-2026) . "<p>;
 ?>
