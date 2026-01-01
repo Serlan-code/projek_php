@@ -1,69 +1,187 @@
-<?php
-echo "<h1>FORM PENDAFTARAN MAHASISWA BARU</h1>";
-echo "<hr>";
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendaftaran Mahasiswa Baru</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
 
-echo "<a href='index.php'>Beranda</a> | ";
-echo "<a href='profil.php'>Profil Kampus</a> | ";
-echo "<a href='pendaftaran.php'>Pendaftaran</a>";
-echo "<hr>";
+        /* Navbar */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
 
-echo "<form method='post' action='proses_daftar.php'>";
+        /* Container Utama */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
 
-// Memulai Tabel
-echo "<table border='0' cellpadding='8' cellspacing='0'>";
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-// Fungsi bantu untuk membuat baris tabel agar kode lebih bersih
-function buat_baris($label, $input) {
-    echo "<tr>
-            <td width='200'><strong>$label</strong></td>
-            <td>:</td>
-            <td>$input</td>
-          </tr>";
-}
+        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
 
-buat_baris("NIK", "<input type='text' name='nik' required size='30'>");
-buat_baris("NIM (Opsional)", "<input type='text' name='nim' size='30'>");
-buat_baris("Nama Lengkap", "<input type='text' name='nama' required size='30'>");
+        /* Styling Tabel Form */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-$opt_jk = "<select name='jk' required>
-            <option value=''>-- Pilih --</option>
-            <option value='Laki-laki'>Laki-laki</option>
-            <option value='Perempuan'>Perempuan</option>
-          </select>";
-buat_baris("Jenis Kelamin", $opt_jk);
+        td {
+            padding: 12px 5px;
+            vertical-align: middle;
+        }
 
-buat_baris("Tempat Lahir", "<input type='text' name='tempat_lahir' required size='30'>");
-buat_baris("Tanggal Lahir", "<input type='date' name='tanggal_lahir' required>");
-buat_baris("Alamat", "<textarea name='alamat' rows='3' cols='32' required></textarea>");
-buat_baris("No. HP / WhatsApp", "<input type='text' name='nohp' required size='30'>");
-buat_baris("Email", "<input type='email' name='email' size='30'>");
-buat_baris("Asal Sekolah", "<input type='text' name='asal_sekolah' required size='30'>");
+        /* Styling Input, Select, & Textarea */
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"], 
+        input[type="date"], 
+        select, 
+        textarea {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-$opt_prodi = "<select name='prodi' required>
-                <option value=''>-- Pilih Prodi --</option>
-                <option value='Sistem Informasi'>Sistem Informasi</option>
-                <option value='Teknologi Informasi'>Teknologi Informasi</option>
-                <option value='Manajemen'>Manajemen</option>
+        input:focus, select:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Tombol */
+        .btn-group {
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        button[type="submit"]:hover { background-color: #219150; }
+
+        button[type="reset"] {
+            background-color: #e74c3c;
+            color: white;
+            margin-left: 10px;
+        }
+
+        button[type="reset"]:hover { background-color: #c0392b; }
+
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href='index.php'>Beranda</a>
+    <a href='profilkampus.php'>Profil Kampus</a>
+    <a href='informasipendaftaran.php'>Informasi Pendaftaran</a>
+    <a href='kontak.php'>Kontak</a>
+</div>
+
+<div class="container">
+    <?php
+    echo "<h1>FORM PENDAFTARAN MAHASISWA BARU</h1>";
+    echo "<hr>";
+
+    echo "<form method='post' action='proses_tambah.php'>";
+    echo "<table>";
+
+    function buat_baris($label, $input) {
+        echo "<tr>
+                <td width='220'><strong>$label</strong></td>
+                <td width='20'>:</td>
+                <td>$input</td>
+              </tr>";
+    }
+
+    buat_baris("NIK", "<input type='text' name='nik' required>");
+    buat_baris("NIM (Opsional)", "<input type='text' name='nim'>");
+    buat_baris("Nama Lengkap", "<input type='text' name='nama' required>");
+
+    $opt_jk = "<select name='jk' required>
+                <option value=''>-- Pilih --</option>
+                <option value='Laki-laki'>Laki-laki</option>
+                <option value='Perempuan'>Perempuan</option>
               </select>";
-buat_baris("Program Studi", $opt_prodi);
+    buat_baris("Jenis Kelamin", $opt_jk);
 
-buat_baris("Username", "<input type='text' name='username' required size='30'>");
-buat_baris("Password", "<input type='password' name='password' required size='30'>");
+    buat_baris("Tempat Lahir", "<input type='text' name='tempat_lahir' required>");
+    buat_baris("Tanggal Lahir", "<input type='date' name='ttl' required>");
+    buat_baris("Alamat", "<textarea name='alamat' rows='3' required></textarea>");
+    buat_baris("No. HP / WhatsApp", "<input type='text' name='hp' required>");
+    buat_baris("Email", "<input type='email' name='email'>");
+    buat_baris("Asal Sekolah", "<input type='text' name='asal_sekolah' required>");
 
-// Baris Tombol
-echo "<tr>
-        <td></td>
-        <td></td>
-        <td>
-            <br>
-            <button type='submit' style='padding: 5px 15px;'>Kirim Pendaftaran</button>
-            <button type='reset' style='padding: 5px 15px;'>Reset</button>
-        </td>
-      </tr>";
+    $opt_prodi = "<select name='prodi' required>
+                    <option value=''>-- Pilih Prodi --</option>
+                    <option value='Sistem Informasi'>Sistem Informasi</option>
+                    <option value='Teknologi Informasi'>Teknologi Informasi</option>
+                    <option value='Manajemen'>Manajemen</option>
+                  </select>";
+    buat_baris("Program Studi", $opt_prodi);
 
-echo "</table>";
-echo "</form>";
+    buat_baris("Username", "<input type='text' name='username' required>");
+    buat_baris("Password", "<input type='password' name='password' required>");
 
-echo "<hr>";
-echo "<p>© 2025 Sistem Pendaftaran Mahasiswa</p>";
-?>
+    echo "<tr>
+            <td></td>
+            <td></td>
+            <td class='btn-group'>
+                <button type='submit'>Kirim Pendaftaran</button>
+                <button type='reset'>Reset</button>
+            </td>
+          </tr>";
+
+    echo "</table>";
+    echo "</form>";
+
+    echo "<hr>";
+    echo "<footer>© 2025 Sistem Pendaftaran Mahasiswa</footer>";
+    ?>
+</div>
+
+</body>
+</html>
