@@ -1,48 +1,156 @@
-<?php
-echo "<h1>PROFIL KAMPUS</h1>";
-echo "<hr>";
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Kampus - ITIS Khatulistiwa</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-echo "<p><b>Institut Teknologi dan Ilmu Sosial Khatulistiwa</b></p>";
+        /* Navbar (Sama dengan Index) */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
 
-echo "<a href='index.php'>Beranda</a> | ";
-echo "<a href='profil.php'>Profil Kampus</a> | ";
-echo "<a href='#'>Informasi Pendaftaran</a> | ";
-echo "<a href='#'>Kontak</a>";
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-echo "<hr>";
+        .navbar a:hover {
+            color: #3498db;
+        }
 
-echo "<h2>Tentang Kampus</h2>";
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
 
-echo "<p>
-Institut Teknologi dan Ilmu Sosial Khatulistiwa merupakan perguruan tinggi
-yang berkomitmen dalam pengembangan ilmu pengetahuan dan teknologi
-serta ilmu sosial untuk mencetak lulusan yang unggul, berkarakter,
-dan siap bersaing di dunia kerja.
-</p>";
+        header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
 
-echo "<h2>Visi</h2>";
-echo "<p>
-Menjadi perguruan tinggi unggul dalam bidang teknologi dan ilmu sosial
-yang berdaya saing nasional.
-</p>";
+        header h1 {
+            margin: 0;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-echo "<h2>Misi</h2>";
-echo "<ul>
-    <li>Menyelenggarakan pendidikan berkualitas.</li>
-    <li>Mengembangkan penelitian dan inovasi.</li>
-    <li>Melaksanakan pengabdian kepada masyarakat.</li>
-    <li>Mencetak lulusan yang profesional dan beretika.</li>
-</ul>";
+        .campus-title {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
 
-echo "<h2>Program Studi</h2>";
-echo "<ul>
-    <li>Manajemen</li>
-    <li>Ilmu Hukum</li>
-    <li>Sistem Informasi</li>
-    
-</ul>";
+        h2 {
+            color: #2980b9;
+            border-left: 5px solid #2980b9;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
 
-echo "<hr>";
+        .description {
+            line-height: 1.8;
+            text-align: justify;
+        }
 
-echo "<p>© 2025 Program Studi Sistem Informasi</p>";
-?>
+        .list-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #95a5a6;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href='index.php'>Beranda</a>
+    <a href='profilkampus.php'>Profil Kampus</a>
+    <a href='informasipendaftaran.php'>Informasi Pendaftaran</a>
+    <a href='kontak.php'>Kontak</a>
+</div>
+
+<div class="container">
+    <header>
+        <?php echo "<h1>PROFIL KAMPUS</h1>"; ?>
+        <div class="campus-title">Institut Teknologi dan Ilmu Sosial Khatulistiwa</div>
+    </header>
+
+    <div class="description">
+        <?php
+        echo "<h2>Tentang Kampus</h2>";
+        echo "<p>Institut Teknologi dan Ilmu Sosial Khatulistiwa merupakan perguruan tinggi yang berkomitmen dalam pengembangan ilmu pengetahuan dan teknologi serta ilmu sosial untuk mencetak lulusan yang unggul, berkarakter, dan siap bersaing di dunia kerja.</p>";
+        ?>
+    </div>
+
+    <div class="list-box">
+        <?php
+        echo "<h2>Visi</h2>";
+        echo "<p><i>'Menjadi Perguruan Tinggi Yang Berdaya saing Dalam Pengembangan dan Pemberdayaan Masyarakat di Tingkat Nasional Pada Tahun 2025'</i></p>";
+        ?>
+    </div>
+
+    <?php
+    echo "<h2>Misi</h2>";
+    echo "<ul>
+        <li>Menyelenggarakan pendidikan profesional di bidang teknologi dan ilmu sosial yang berorientasi pada peralihan teknologi dari kampus ke masyarakat.</li>
+        <li>Melaksanakan penelitian yang bersifat inovatif di bidang teknologi dan ilmu sosial dalam meningkatkan taraf hidup masyarakat.</li>
+        <li>Melaksanakan pengabdian kepada masyarakat yang berdaya saing untuk pembangunan dan pemberdayaan masyarakat.</li>
+        <li>Melakukan kontribusi nyata dalam mengembangkan dan pemberdayaan masyarakat melalui penyelenggaraan pengabdian masyarakat.</li>
+        <li>Menjal menjalin dan mengembangkan jejaring kerjasama dengan perguruan tinggi dan lembaga lain yang terkait dengan pemberdayaan masyarakat.</li>
+    </ul>";
+
+    echo "<h2>Program Studi</h2>";
+    echo "<div class='list-box'>
+        <ul>
+            <li><b>Manajemen</b></li>
+            <li><b>Ilmu Hukum</b></li>
+            <li><b>Sistem Informasi</b></li>
+        </ul>
+    </div>";
+    ?>
+
+    <footer>
+        <p>© 2025 Program Studi Sistem Informasi - ITIS Khatulistiwa</p>
+    </footer>
+</div>
+
+</body>
+</html>

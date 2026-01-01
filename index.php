@@ -1,34 +1,135 @@
-<?php
-echo "<h1>PRODI SISTEM INFORMASI 2025</h1>";
-echo "<hr>";
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistem Informasi Pendaftaran</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-echo "<p><b>Institut Teknologi dan Ilmu Sosial Khatulistiwa</b></p>";
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
 
-echo "<a href='index.php'>Beranda</a> | ";
-echo "<a href='profilkampus.php'>Profil Kampus</a> | ";
-echo "<a href='informasipendaftaran.php'>Informasi Pendaftaran</a> | ";
-echo "<a href='kontak.php'>Kontak</a>";
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-echo "<hr>";
+        .navbar a:hover {
+            color: #3498db;
+        }
 
-echo "<h2>Selamat Datang</h2>";
+        .hero-section {
+            background: white;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
 
-echo "<p>
-Selamat datang di Sistem Informasi Pendaftaran Mahasiswa Baru.
-Website ini digunakan untuk membantu calon mahasiswa melakukan
-pendaftaran secara online dengan mudah dan cepat.
-</p>";
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
 
-echo "<p>
-Silakan klik tombol di bawah ini untuk melakukan pendaftaran.
-</p>";
+        .campus-name {
+            color: #7f8c8d;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
 
-echo "<a href='tambah.php'>DAFTAR SEKARANG</a>";
+        .content-box {
+            line-height: 1.6;
+            color: #555;
+            margin: 30px 0;
+        }
 
-echo "<hr>";
+        .btn-daftar {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
 
-echo "<p>© 2025 Program Studi Sistem Informasi</p>";
-echo "<p>update terakhir: " . date("d-m-y") . "</p>";
-echo "<p>Status pendaftaran: Aktif</p>";
-echo "<div class='footer'>© 2025 Sistem Pendaftaran Mahasiswa</div>";
-?>
+        .btn-daftar:hover {
+            background-color: #219150;
+            transform: translateY(-3px);
+        }
+
+        .footer-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #ddd;
+            font-size: 13px;
+            color: #666;
+            text-align: center;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href='index.php'>Beranda</a>
+    <a href='profilkampus.php'>Profil Kampus</a>
+    <a href='informasipendaftaran.php'>Informasi Pendaftaran</a>
+    <a href='kontak.php'>Kontak</a>
+</div>
+
+<div class="hero-section">
+    <?php
+    echo "<h1>PRODI SISTEM INFORMASI 2025</h1>";
+    echo "<div class='campus-name'>Institut Teknologi dan Ilmu Sosial Khatulistiwa</div>";
+    
+    echo "<hr>";
+
+    echo "<h2>Selamat Datang</h2>";
+
+    echo "<div class='content-box'>
+        <p>Selamat datang di Sistem Informasi Pendaftaran Mahasiswa Baru. 
+        Website ini digunakan untuk membantu calon mahasiswa melakukan 
+        pendaftaran secara online dengan mudah dan cepat.</p>
+        
+        <p>Silakan klik tombol di bawah ini untuk melakukan pendaftaran.</p>
+    </div>";
+
+    echo "<a href='tambah.php' class='btn-daftar'>DAFTAR SEKARANG</a>";
+    ?>
+</div>
+
+<div class="footer-section">
+    <?php
+    echo "<p>© 2025 Program Studi Sistem Informasi</p>";
+    echo "<p>Update terakhir: " . date("d-m-Y") . "</p>";
+    echo "<p>Status Pendaftaran: <b>Aktif</b></p>";
+    ?>
+</div>
+
+</body>
+</html>
