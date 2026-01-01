@@ -28,8 +28,7 @@ echo "<a href='tambah.php'>DAFTAR SEKARANG</a>";
 echo "<hr>";
 
 echo "<p>© 2025 Program Studi Sistem Informasi</p>";
-echo "<p>update terakhir: ". date (02-01-2026) . "<p>;
-HEAD
-echo "<p>status: pendaftaran aktif</p>";
-origin/master
+echo "<p>update terakhir: " . date("d-m-y") . "</p>";
+echo "<p>Status pendaftaran: Aktif</p>";
+echo "<div class='footer'>© 2025 Sistem Pendaftaran Mahasiswa</div>";
 ?>
